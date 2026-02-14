@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech — Ion Beacon</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      margin-top: 60px;
+      padding: 64px 2rem 0;
+    }
+    .page-header .container { max-width: 1060px; margin: 0 auto; }
+
+    /* ── Tech Stack Grid ── */
+    .tech-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;
+    }
+    .tech-box {
+      background: var(--gray-fill);
+      border: 2px solid transparent;
+      border-radius: 0;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .tech-box:hover { border-color: var(--dark); }
+    .tech-box .icon {
+      width: 40px; height: 40px;
+      background: var(--accent-glow);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem; font-size: 1.2rem;
+    }
+    .tech-box h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .tech-box p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.55; }
+
+    /* ── Architecture ── */
+    .arch-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    .arch-box {
+      background: var(--gray-fill);
+      border: 2px solid transparent;
+      border-radius: 0;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .arch-box:hover { border-color: var(--dark); }
+    .arch-box h3 {
+      font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .arch-box .tag {
+      font-size: 0.6rem; background: var(--accent); color: #fff;
+      padding: 2px 7px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .arch-box p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.55; }
+
+    /* ── Features ── */
+    .features-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    .feat-box {
+      background: var(--gray-fill);
+      border: 2px solid transparent;
+      border-radius: 0;
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .feat-box:hover { border-color: var(--dark); }
+    .feat-box .feat-cat {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--accent-dark); margin-bottom: 0.6rem;
+    }
+    .feat-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feat-box p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.55; }
+    .feat-list {
+      list-style: none; margin-top: 0.6rem;
+    }
+    .feat-list li {
+      font-size: 0.82rem; color: #555; padding: 5px 0;
+      border-bottom: 1px solid var(--gray-border);
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .feat-list li:last-child { border-bottom: none; }
+    .feat-list li::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--accent); flex-shrink: 0; margin-top: 4px;
+    }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 2.5rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 9px; top: 0; bottom: 0;
+      width: 2px; background: var(--gray-border);
+    }
+    .tl-item { position: relative; margin-bottom: 2rem; }
+    .tl-item::before {
+      content: ''; position: absolute; left: -2.5rem; top: 5px;
+      width: 10px; height: 10px;
+      background: var(--gray-fill); border: 3px solid var(--accent);
+    }
+    .tl-item.done::before { background: var(--accent); }
+    .tl-item .date {
+      font-size: 0.75rem; color: var(--accent-dark); font-weight: 600; margin-bottom: 0.25rem;
+    }
+    .tl-item h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .tl-item p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.55; }
+
+    @media (max-width: 768px) {
+      .arch-grid, .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <a href="index.html" class="nav-brand"><span class="dot"></span> Ion Beacon</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tech.html" class="active">Tech</a></li>
+    <li><a href="future.html">Roadmap</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── Page Header ── -->
+<div class="page-header">
+  <div class="container">
+    <div class="section-label">Technical Specifications</div>
+    <h1 class="section-title">Tech & Architecture</h1>
+    <p class="section-desc">Hardware, firmware, and design patterns powering the Ion Beacon system.</p>
+  </div>
+</div>
+
+<!-- ── Tech Stack ── -->
+<section>
+  <div class="container">
+    <h2 class="section-title" style="font-size:1.5rem; margin-bottom:1.5rem;">Technology Stack</h2>
+    <div class="tech-grid">
+      <div class="tech-box reveal">
+        <div class="icon">⚡</div>
+        <h3>ESP32-S3 Super Mini</h3>
+        <p>MCU with built-in BLE for wireless app control and real-time sensor processing.</p>
+      </div>
+      <div class="tech-box reveal">
+        <div class="icon">📐</div>
+        <h3>MPU6050 Sensor</h3>
+        <p>6-axis accelerometer &amp; gyroscope providing real-time motion data via I2C.</p>
+      </div>
+      <div class="tech-box reveal">
+        <div class="icon">💡</div>
+        <h3>2×(5×5) LED Matrix</h3>
+        <p>Addressable WS2812 NeoPixel grid for reactive animations driven by sensor data.</p>
+      </div>
+      <div class="tech-box reveal">
+        <div class="icon">📱</div>
+        <h3>BLE App Control</h3>
+        <p>Bluefruit Connect (iOS) — switch modes, tune thresholds, adjust visuals live.</p>
+      </div>
+      <div class="tech-box reveal">
+        <div class="icon">🔧</div>
+        <h3>C++ / Arduino</h3>
+        <p>Firmware using Adafruit NeoMatrix, GFX, MPU6050 &amp; BLEDevice libraries.</p>
+      </div>
+      <div class="tech-box reveal">
+        <div class="icon">🔗</div>
+        <h3>Board Attachment</h3>
+        <p>3M Dual Lock SJ 3550 — secure yet removable mounting to any board.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Architecture ── -->
+<section>
+  <div class="container">
+    <h2 class="section-title" style="font-size:1.5rem; margin-bottom:0.5rem;">Architecture & Patterns</h2>
+    <p class="section-desc">Modular file structure: Core Logic (Modes.cpp), Communication (BleHandler.cpp), Global State (Globals.h).</p>
+    <div class="arch-grid">
+      <div class="arch-box reveal">
+        <h3>Finite State Machine <span class="tag">FSM</span></h3>
+        <p>Manages RIDING → JUMPING → LANDED transitions in Jump Mode for precise phase detection.</p>
+      </div>
+      <div class="arch-box reveal">
+        <h3>Non-Blocking Execution</h3>
+        <p>millis() timers instead of delay() — keeps sensor polling and BLE alive during animations.</p>
+      </div>
+      <div class="arch-box reveal">
+        <h3>Callback Pattern</h3>
+        <p>Async BLE write/connect events via the MyCallbacks class for responsive communication.</p>
+      </div>
+      <div class="arch-box reveal">
+        <h3>First Principle Logic</h3>
+        <p>getAccelMagnitude() raw physics calculation determines lighting — no pre-baked animations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features & App Control ── -->
+<section>
+  <div class="container">
+    <h2 class="section-title" style="font-size:1.5rem; margin-bottom:0.5rem;">Features & App Control</h2>
+    <p class="section-desc">Full wireless control over modes, physics tuning, and visual settings via BLE.</p>
+    <div class="features-grid">
+      <div class="feat-box reveal">
+        <div class="feat-cat">System Mode</div>
+        <h3>5 Lighting Modes</h3>
+        <p>Switch via app:</p>
+        <ul class="feat-list">
+          <li>Jump Analyzer — reacts to airtime &amp; landings</li>
+          <li>Pink — ambient glow mode</li>
+          <li>Movement — responds to board tilt &amp; speed</li>
+          <li>Icon — static display patterns</li>
+          <li>Plotter — real-time sensor visualization</li>
+        </ul>
+      </div>
+      <div class="feat-box reveal">
+        <div class="feat-cat">Physics & Sensor Tuning</div>
+        <h3>Dial In Your Ride</h3>
+        <ul class="feat-list">
+          <li><strong>Freefall Threshold</strong> — weightlessness detection</li>
+          <li><strong>Landing Threshold</strong> — impact force for landing FX</li>
+          <li><strong>Min Air Time</strong> — min jump duration filter (ms)</li>
+          <li><strong>Sensitivity Delta</strong> — movement mode sensitivity</li>
+        </ul>
+      </div>
+      <div class="feat-box reveal">
+        <div class="feat-cat">Visual Settings</div>
+        <h3>Light Customization</h3>
+        <ul class="feat-list">
+          <li><strong>Brightness</strong> — max LED brightness (0–255)</li>
+          <li><strong>Show Time</strong> — nitro explosion duration post-landing</li>
+          <li><strong>Fade Duration</strong> — light decay in movement mode</li>
+        </ul>
+      </div>
+      <div class="feat-box reveal">
+        <div class="feat-cat">Hardware</div>
+        <h3>Challenges Overcome</h3>
+        <ul class="feat-list">
+          <li>3D-printed standoff matrix for LED diffusion</li>
+          <li>Waterproof + rechargeable: gasket, vaseline, screw lid</li>
+          <li>3M Dual Lock SJ 3550 board attachment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Development Timeline ── -->
+<section>
+  <div class="container">
+    <h2 class="section-title" style="font-size:1.5rem; margin-bottom:1.5rem;">Development Timeline</h2>
+    <div class="timeline">
+      <div class="tl-item done reveal">
+        <div class="date">January 2026</div>
+        <h3>Development Phase (v1–v3)</h3>
+        <p>Core firmware, sensor integration, LED matrix, BLE communication, iterative hardware design.</p>
+      </div>
+      <div class="tl-item done reveal">
+        <div class="date">January 2026</div>
+        <h3>v1 Testing — Skihalle</h3>
+        <p>First real-world test with Yume, Balta, and Lyli at the indoor ski hall.</p>
+      </div>
+      <div class="tl-item done reveal">
+        <div class="date">February 2026</div>
+        <h3>v3 Testing — Klínovec Night Skiing</h3>
+        <p>Night session. Feedback: set brightness high for best visual impact. Device fell off during a fall — recovered, but white casing blended with snow.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="date">Upcoming</div>
+        <h3>Version 4.0</h3>
+        <p>9-DOF sensor, better LEDs, improved animations, backup sling, onboard data logging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand"><span class="dot"></span> Ion Beacon</div>
+  <p>A physics-reactive snowboard light — built for the mountain.</p>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

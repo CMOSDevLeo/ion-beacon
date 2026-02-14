@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap — Ion Beacon</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-header {
+      margin-top: 60px;
+      padding: 64px 2rem 0;
+    }
+    .page-header .container { max-width: 1060px; margin: 0 auto; }
+
+    /* ── Roadmap Cards ── */
+    .roadmap-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    .rm-box {
+      background: var(--gray-fill);
+      border: 2px solid transparent;
+      border-radius: 0;
+      padding: 2rem;
+      transition: border-color 0.2s;
+    }
+    .rm-box:hover { border-color: var(--dark); }
+    .rm-box h3 {
+      font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;
+      color: var(--accent-dark);
+    }
+    .rm-list { list-style: none; }
+    .rm-list li {
+      font-size: 0.85rem; color: #555; padding: 7px 0;
+      border-bottom: 1px solid var(--gray-border);
+      display: flex; align-items: baseline; gap: 10px;
+      line-height: 1.5;
+    }
+    .rm-list li:last-child { border-bottom: none; }
+    .rm-list li::before {
+      content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0;
+    }
+
+    /* ── Ideas Backlog ── */
+    .ideas-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;
+    }
+    .idea-box {
+      background: var(--gray-fill);
+      border: 2px solid transparent;
+      border-radius: 0;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.85rem; color: #555;
+      line-height: 1.55;
+      transition: border-color 0.2s;
+    }
+    .idea-box:hover { border-color: var(--dark); }
+
+    /* ── Research ── */
+    .research-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;
+    }
+    .research-box {
+      background: var(--gray-fill);
+      border: 2px solid transparent;
+      border-radius: 0;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .research-box:hover { border-color: var(--dark); }
+    .research-box h3 {
+      font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;
+    }
+    .research-box p {
+      font-size: 0.85rem; color: var(--mid-gray); line-height: 1.55;
+    }
+
+    @media (max-width: 768px) {
+      .roadmap-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <a href="index.html" class="nav-brand"><span class="dot"></span> Ion Beacon</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tech.html">Tech</a></li>
+    <li><a href="future.html" class="active">Roadmap</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── Page Header ── -->
+<div class="page-header">
+  <div class="container">
+    <div class="section-label">What's Next</div>
+    <h1 class="section-title">Roadmap & Future Versions</h1>
+    <p class="section-desc">From the next hardware revision to long-term product vision.</p>
+  </div>
+</div>
+
+<!-- ── Version 4.0 & Long-term ── -->
+<section>
+  <div class="container">
+    <div class="roadmap-grid">
+      <div class="rm-box reveal">
+        <h3>Version 4.0</h3>
+        <ul class="rm-list">
+          <li>9-DOF sensor incl. magnetometer</li>
+          <li>Improved attachment system or backup sling</li>
+          <li>Better LEDs and richer animations</li>
+          <li>Onboard storage to log sensor data for later analysis</li>
+        </ul>
+      </div>
+      <div class="rm-box reveal">
+        <h3>Long-term Vision</h3>
+        <ul class="rm-list">
+          <li>More comprehensive and robust animations with better sensor data</li>
+          <li>Cleaner, more refined industrial design</li>
+          <li>Machine learning for advanced sensor interpretation</li>
+          <li>Potential market launch via TikTok Reels and Etsy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Ideas Backlog ── -->
+<section>
+  <div class="container">
+    <h2 class="section-title" style="font-size:1.5rem; margin-bottom:0.5rem;">Ideas Backlog</h2>
+    <p class="section-desc">Collected ideas for future iterations — from hardware tweaks to visual improvements.</p>
+    <div class="ideas-grid">
+      <div class="idea-box reveal">Two LED strips on the back instead of the eye design</div>
+      <div class="idea-box reveal">Remove visible hot glue — merge plate and mainbody for a cleaner look</div>
+      <div class="idea-box reveal">Round eyes instead of square — possible pivot to exhaust design for more nitro aesthetic</div>
+      <div class="idea-box reveal">Less stutter when dimming: better refresh rate, lower minimum brightness, more brightness steps</div>
+      <div class="idea-box reveal">Dark filament for LED standoff dividers to prevent light bleed</div>
+      <div class="idea-box reveal">Colors that match the board — shrink the visual footprint</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research & Exploration ── -->
+<section>
+  <div class="container">
+    <h2 class="section-title" style="font-size:1.5rem; margin-bottom:1.5rem;">Research & Exploration</h2>
+    <div class="research-grid">
+      <div class="research-box reveal">
+        <h3>Magnetometer Integration</h3>
+        <p>Adding a magnetometer for full 9-DOF orientation — enabling heading-aware animations and compass-based effects.</p>
+      </div>
+      <div class="research-box reveal">
+        <h3>Machine Learning</h3>
+        <p>Training models on sensor data to recognize trick patterns, riding styles, and terrain automatically.</p>
+      </div>
+      <div class="research-box reveal">
+        <h3>Market Potential</h3>
+        <p>Exploring TikTok Reels for viral marketing and Etsy as a first sales channel for handmade units.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-brand"><span class="dot"></span> Ion Beacon</div>
+  <p>A physics-reactive snowboard light — built for the mountain.</p>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
