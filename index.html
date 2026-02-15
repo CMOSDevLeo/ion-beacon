@@ -37,6 +37,7 @@
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
       background: none;
+      pointer-events: none;
     }
     .hero-overlay h1 {
       font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -46,15 +47,19 @@
       letter-spacing: -0.02em;
       text-transform: uppercase;
       text-shadow:
-        0 2px 8px rgba(0,0,0,0.7),
-        0 4px 30px rgba(0,0,0,0.5),
-        0 0 80px rgba(0,0,0,0.3);
+        0 2px 8px rgba(0,0,0,0.8),
+        0 4px 30px rgba(0,0,0,0.6),
+        0 0 80px rgba(0,0,0,0.4);
       line-height: 1;
       text-align: center;
       padding: 0 1rem;
     }
     .hero-overlay h1 span {
       color: var(--accent);
+      text-shadow:
+        0 2px 8px rgba(0,0,0,0.8),
+        0 4px 20px rgba(0,0,0,0.6),
+        0 0 40px rgba(124,204,43,0.3);
     }
 
     /* ── Intro ── */
