@@ -81,12 +81,6 @@
     .stats-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
     }
-    .stats-grid .stat-box:nth-child(3) {
-      grid-column: 1 / span 2; max-width: 55%;
-    }
-    .stats-grid .stat-box:nth-child(4) {
-      grid-column: 1 / span 2; max-width: 45%; margin-left: auto;
-    }
     .stat-box {
       background: var(--surface-container-lowest);
       border: none;
@@ -107,7 +101,7 @@
 
     /* ── Videos ── */
     .videos-section {
-      padding: 0 2rem 8.5rem;
+      padding: 4rem 2rem 3rem;
     }
     .videos-inner {
       max-width: 1060px; margin: 0 auto;
@@ -119,14 +113,14 @@
       color: var(--on-surface-variant);
     }
     .videos-row {
-      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
     }
     .video-card {
       background: var(--surface-container-low);
       border: none;
       border-radius: 0;
       overflow: hidden;
-      aspect-ratio: 2/3;
+      aspect-ratio: 3/4;
       position: relative;
       transition: box-shadow 0.2s;
     }
@@ -152,15 +146,9 @@
 
     @media (max-width: 768px) {
       .intro-inner { grid-template-columns: 1fr; }
-      .stats-grid .stat-box:nth-child(3),
-      .stats-grid .stat-box:nth-child(4) {
-        grid-column: auto; max-width: none; margin-left: 0;
-      }
-      .videos-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .videos-row { grid-template-columns: 1fr; gap: 1rem; }
+      .video-card { aspect-ratio: 3/4; }
       .hero-banner { height: 50vh; min-height: 280px; }
-    }
-    @media (max-width: 480px) {
-      .videos-row { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
     }
   </style>
 </head>
@@ -194,9 +182,8 @@
   <div class="intro-inner">
     <div class="intro-text">
       <div class="section-label">Project Overview</div>
-      <h2>Physikalisches Feedback-Instrument</h2>
-      <p>Ion Beacon translates the invisible forces of snowboarding — weightlessness, G-forces, impact — into visible light to visually amplify the dynamics of a ride, especially for co-riders but also for the rider themselves.</p>
-      <p>Built for personal use and friends who appreciate tech-enhanced riding with cool, latency-free reactive lighting.</p>
+      <h2>Physical Feedback Instrument</h2>
+      <p>The board moves. The light responds. No delay, no simulation — just physics.</p>
       <div class="cta-row">
         <a href="tech.html" class="btn btn-primary">Technical Specs →</a>
         <a href="future.html" class="btn btn-outline">Roadmap</a>
@@ -230,11 +217,11 @@
     <div class="videos-row">
       <div class="video-card reveal">
         <video src="videos/home/IMG_7298-Website.mp4" autoplay muted loop playsinline></video>
-        <div class="video-caption">Klínovec Night Skiing — v3</div>
+        <div class="video-caption">Cruising with Acceleration Mode</div>
       </div>
       <div class="video-card reveal">
         <video src="videos/home/IMG_7303-Website.mp4" autoplay muted loop playsinline></video>
-        <div class="video-caption">Skihalle Testing — v1</div>
+        <div class="video-caption">Jump Algorithm Test</div>
       </div>
     </div>
   </div>
