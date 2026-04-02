@@ -6,7 +6,7 @@
   <title>Ion Beacon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     /* ── Hero Image Banner ── */
@@ -25,10 +25,10 @@
     }
     .hero-banner .placeholder-img {
       width: 100%; height: 100%;
-      background: var(--gray-fill);
+      background: var(--surface-container-low);
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 12px;
-      color: var(--mid-gray); font-size: 0.9rem;
+      color: var(--on-surface-variant); font-size: 0.9rem;
     }
     .hero-banner .placeholder-img svg {
       width: 64px; height: 64px; opacity: 0.35;
@@ -39,7 +39,7 @@
       background: none;
     }
     .hero-overlay h1 {
-      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(3rem, 10vw, 7rem);
       font-weight: 800;
       color: #fff;
@@ -54,72 +54,83 @@
       padding: 0 1rem;
     }
     .hero-overlay h1 span {
-      color: var(--accent);
+      color: #fff;
     }
 
     /* ── Intro ── */
     .intro {
       padding: 64px 2rem;
+      background: var(--surface-container-low);
     }
     .intro-inner {
       max-width: 1060px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
     }
     .intro-text h2 {
+      font-family: var(--font-display);
       font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
     .intro-text p {
-      color: #555; line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem;
+      color: var(--on-surface-variant); line-height: 1.8; margin-bottom: 1rem; font-size: 0.875rem;
     }
     .intro-text .cta-row {
       margin-top: 1.5rem;
       display: flex; gap: 0.75rem; flex-wrap: wrap;
     }
     .stats-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    .stats-grid .stat-box:nth-child(3) {
+      grid-column: 1 / span 2; max-width: 55%;
+    }
+    .stats-grid .stat-box:nth-child(4) {
+      grid-column: 1 / span 2; max-width: 45%; margin-left: auto;
     }
     .stat-box {
-      background: var(--gray-fill);
-      border: 2px solid transparent;
+      background: var(--surface-container-lowest);
+      border: none;
       border-radius: 0;
       padding: 1.5rem;
-      transition: border-color 0.2s;
+      transition: box-shadow 0.2s;
     }
-    .stat-box:hover { border-color: var(--dark); }
+    .stat-box:hover { box-shadow: var(--shadow-ambient); }
     .stat-box .number {
-      font-size: 2rem; font-weight: 700; color: var(--accent-dark); display: block;
+      font-family: var(--font-display);
+      font-size: 2rem; font-weight: 700; color: var(--on-surface); display: block;
       line-height: 1.1;
     }
     .stat-box .label {
-      font-size: 0.75rem; color: var(--mid-gray); font-weight: 500; margin-top: 4px;
+      font-size: 0.6875rem; color: var(--on-surface-variant); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px;
     }
 
     /* ── Videos ── */
     .videos-section {
-      padding: 0 2rem 80px;
+      padding: 0 2rem 8.5rem;
     }
     .videos-inner {
       max-width: 1060px; margin: 0 auto;
     }
     .videos-inner h3 {
-      font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--mid-gray);
+      font-family: var(--font-body);
+      font-size: 0.6875rem; font-weight: 600; margin-bottom: 1.25rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--on-surface-variant);
     }
     .videos-row {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;
     }
     .video-card {
-      background: var(--gray-fill);
-      border: 2px solid transparent;
+      background: var(--surface-container-low);
+      border: none;
       border-radius: 0;
       overflow: hidden;
       aspect-ratio: 2/3;
       position: relative;
-      transition: border-color 0.2s;
+      transition: box-shadow 0.2s;
     }
-    .video-card:hover { border-color: var(--dark); }
+    .video-card:hover { box-shadow: var(--shadow-ambient); }
     .video-card video {
       width: 100%; height: 100%; object-fit: cover; display: block;
     }
@@ -127,7 +138,7 @@
       width: 100%; height: 100%;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      color: var(--mid-gray); font-size: 0.85rem; gap: 8px;
+      color: var(--on-surface-variant); font-size: 0.85rem; gap: 8px;
     }
     .video-placeholder svg {
       width: 48px; height: 48px; opacity: 0.3;
@@ -141,6 +152,10 @@
 
     @media (max-width: 768px) {
       .intro-inner { grid-template-columns: 1fr; }
+      .stats-grid .stat-box:nth-child(3),
+      .stats-grid .stat-box:nth-child(4) {
+        grid-column: auto; max-width: none; margin-left: 0;
+      }
       .videos-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .hero-banner { height: 50vh; min-height: 280px; }
     }

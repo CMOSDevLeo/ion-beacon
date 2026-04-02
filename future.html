@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roadmap — Ion Beacon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     .page-header {
@@ -14,30 +17,30 @@
 
     /* ── Roadmap Cards ── */
     .roadmap-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1.5rem;
     }
     .rm-box {
-      background: var(--gray-fill);
-      border: 2px solid transparent;
+      background: var(--surface-container-lowest);
+      border: none;
       border-radius: 0;
       padding: 2rem;
-      transition: border-color 0.2s;
+      transition: box-shadow 0.2s;
     }
-    .rm-box:hover { border-color: var(--dark); }
+    .rm-box:hover { box-shadow: var(--shadow-ambient); }
     .rm-box h3 {
+      font-family: var(--font-display);
       font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;
-      color: var(--accent-dark);
+      color: var(--on-surface);
     }
     .rm-list { list-style: none; }
     .rm-list li {
-      font-size: 0.85rem; color: #555; padding: 7px 0;
-      border-bottom: 1px solid var(--gray-border);
+      font-size: 0.85rem; color: var(--on-surface-variant); padding: 10px 0;
+      border-bottom: none;
       display: flex; align-items: baseline; gap: 10px;
       line-height: 1.5;
     }
-    .rm-list li:last-child { border-bottom: none; }
     .rm-list li::before {
-      content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0;
+      content: '\2192'; color: var(--primary); font-weight: 700; flex-shrink: 0;
     }
 
     /* ── Ideas Backlog ── */
@@ -45,33 +48,34 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;
     }
     .idea-box {
-      background: var(--gray-fill);
-      border: 2px solid transparent;
+      background: var(--surface-container-lowest);
+      border: none;
       border-radius: 0;
       padding: 1.25rem 1.5rem;
-      font-size: 0.85rem; color: #555;
+      font-size: 0.875rem; color: var(--on-surface-variant);
       line-height: 1.55;
-      transition: border-color 0.2s;
+      transition: box-shadow 0.2s;
     }
-    .idea-box:hover { border-color: var(--dark); }
+    .idea-box:hover { box-shadow: var(--shadow-ambient); }
 
     /* ── Research ── */
     .research-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;
     }
     .research-box {
-      background: var(--gray-fill);
-      border: 2px solid transparent;
+      background: var(--surface-container-lowest);
+      border: none;
       border-radius: 0;
       padding: 1.5rem;
-      transition: border-color 0.2s;
+      transition: box-shadow 0.2s;
     }
-    .research-box:hover { border-color: var(--dark); }
+    .research-box:hover { box-shadow: var(--shadow-ambient); }
     .research-box h3 {
+      font-family: var(--font-display);
       font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;
     }
     .research-box p {
-      font-size: 0.85rem; color: var(--mid-gray); line-height: 1.55;
+      font-size: 0.875rem; color: var(--on-surface-variant); line-height: 1.55;
     }
 
     @media (max-width: 768px) {
@@ -106,7 +110,7 @@
 </div>
 
 <!-- ── Version 4.0 & Long-term ── -->
-<section>
+<section class="tonal-bg">
   <div class="container">
     <div class="roadmap-grid">
       <div class="rm-box reveal">
@@ -148,7 +152,7 @@
 </section>
 
 <!-- ── Research & Exploration ── -->
-<section>
+<section class="tonal-bg">
   <div class="container">
     <h2 class="section-title" style="font-size:1.5rem; margin-bottom:1.5rem;">Research & Exploration</h2>
     <div class="research-grid">
